@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{C3485BA4-DC4F-4553-87DE-BFBBD8A00717}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>XamChat.IOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>XamChatIOS</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>i386</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchProfiling>true</MtouchProfiling>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchArch>ARMv7</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>i386</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <MtouchLink>None</MtouchLink>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARMv7</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchProfiling>true</MtouchProfiling>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="monotouch" />
+    <Reference Include="Calabash">
+      <HintPath>..\packages\Xamarin.TestCloud.Agent.0.13.0\lib\MonoTouch10\Calabash.dll</HintPath>
+    </Reference>
+    <Reference Include="Parse.iOS">
+      <HintPath>..\Components\parse-1.5.0\lib\ios\Parse.iOS.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Default-568h%402x.png" />
+    <BundleResource Include="Resources\114.png" />
+    <BundleResource Include="Resources\120.png" />
+    <BundleResource Include="Resources\29.png" />
+    <BundleResource Include="Resources\57.png" />
+    <BundleResource Include="Resources\58.png" />
+    <BundleResource Include="Resources\80.png" />
+    <BundleResource Include="Resources\Icon.png" />
+    <BundleResource Include="Resources\Icon%402x.png" />
+    <BundleResource Include="Resources\Icon-60%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="..\XamChat\IoC\ServiceContainer.cs">
+      <Link>Core\ServiceContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\XamChat\ViewModel\BaseViewModel.cs">
+      <Link>Core\ViewModel\BaseViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\XamChat\ViewModel\ConversationViewModel.cs">
+      <Link>Core\ViewModel\ConversationViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\XamChat\ViewModel\FriendViewModel.cs">
+      <Link>Core\ViewModel\FriendViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\XamChat\ViewModel\LoginViewModel.cs">
+      <Link>Core\ViewModel\LoginViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\XamChat\ViewModel\RegisterViewModel.cs">
+      <Link>Core\ViewModel\RegisterViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\XamChat\Model\Conversation.cs">
+      <Link>Core\Model\Conversation.cs</Link>
+    </Compile>
+    <Compile Include="..\XamChat\Model\Message.cs">
+      <Link>Core\Model\Message.cs</Link>
+    </Compile>
+    <Compile Include="..\XamChat\Model\User.cs">
+      <Link>Core\Model\User.cs</Link>
+    </Compile>
+    <Compile Include="..\XamChat\Setting\FakeSetting.cs">
+      <Link>Core\Model\FakeSetting.cs</Link>
+    </Compile>
+    <Compile Include="..\XamChat\Setting\ISetting.cs">
+      <Link>Core\Model\ISetting.cs</Link>
+    </Compile>
+    <Compile Include="..\XamChat\Webservice\FakeService.cs">
+      <Link>Core\Model\FakeService.cs</Link>
+    </Compile>
+    <Compile Include="..\XamChat\Webservice\IWebServices.cs">
+      <Link>Core\Model\IWebServices.cs</Link>
+    </Compile>
+    <Compile Include="Views\BaseMessageCell.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\LoginController.designer.cs">
+      <DependentUpon>LoginController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ConversationsController.cs" />
+    <Compile Include="Controllers\ConversationsController.designer.cs">
+      <DependentUpon>ConversationsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\FriendsController.cs" />
+    <Compile Include="Controllers\FriendsController.designer.cs">
+      <DependentUpon>FriendsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\MessagesController.cs" />
+    <Compile Include="Controllers\MessagesController.designer.cs">
+      <DependentUpon>MessagesController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MyMessageCell.cs" />
+    <Compile Include="Views\MyMessageCell.designer.cs">
+      <DependentUpon>MyMessageCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TheirMessageCell.cs" />
+    <Compile Include="Views\TheirMessageCell.designer.cs">
+      <DependentUpon>TheirMessageCell.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
+  <ItemGroup />
+  <ItemGroup>
+    <InterfaceDefinition Include="MainStoryboard.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="parse">
+      <Version>1.5.0</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+  </ItemGroup>
+</Project>

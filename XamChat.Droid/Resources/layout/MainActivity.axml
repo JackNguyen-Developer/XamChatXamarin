@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FDFDFD">
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/mainLogin"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="10dip"
+        android:layout_centerInParent="true"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/Txtview_Username"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:text="Username"
+            android:textColor="@android:color/background_dark" />
+        <EditText
+            android:id="@+id/editTxt_Username"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:hint="Enter Username"
+            android:background="#DEE7EF"
+            android:textSize="30dp"
+            android:textCursorDrawable="@null"
+            android:textColor="@android:color/background_dark" />
+        <TextView
+            android:id="@+id/Txtview_Password"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Password"
+            android:textColor="@android:color/background_dark" />
+        <EditText
+            android:id="@+id/editTxt_Password"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:inputType="textPassword"
+            android:hint="Enter your password"
+            android:textSize="30dp"
+            android:background="#DEE7EF"
+            android:textCursorDrawable="@null"
+            android:textColor="@android:color/background_dark" />
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_marginTop="50dip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Txtview_Password"
+            android:text="Login"
+            android:background="@drawable/custombutton" />
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dip"
+            android:layout_below="@id/btn_login"
+            android:text="Register"
+            android:background="@drawable/custombutton" />
+    </LinearLayout>
+</RelativeLayout>

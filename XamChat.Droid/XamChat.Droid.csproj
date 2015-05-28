@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{C0B4595E-FC1B-46EE-8865-FFCF46E6D064}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>XamChat.Droid</RootNamespace>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
+    <AssemblyName>XamChat.Droid</AssemblyName>
+    <TargetFrameworkVersion>v4.1</TargetFrameworkVersion>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AndroidLinkMode>None</AndroidLinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+    <Reference Include="Mono.Android.Export" />
+    <Reference Include="Xamarin.Android.Support.v4">
+      <HintPath>..\Components\xamandroidsupportv4-18-4.18.1\lib\android\Xamarin.Android.Support.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Parse.Android">
+      <HintPath>..\Components\parse-1.5.0\lib\android\Parse.Android.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AppController.cs" />
+    <Compile Include="Activity\MainActivity.cs" />
+    <Compile Include="Activity\ConversationActivity.cs" />
+    <Compile Include="Adapter\ConversationListViewAdapter.cs" />
+    <Compile Include="Session.cs" />
+    <Compile Include="Activity\FriendListActivity.cs" />
+    <Compile Include="Adapter\FriendListAdapter.cs" />
+    <Compile Include="Activity\MessageActivity.cs" />
+    <Compile Include="BaseActivity.cs" />
+    <Compile Include="Adapter\MessageAdapter.cs" />
+    <Compile Include="..\XamChat\IoC\ServiceContainer.cs">
+      <Link>Core\ServiceContainer.cs</Link>
+    </Compile>
+    <Compile Include="..\XamChat\Model\Conversation.cs">
+      <Link>Core\Conversation.cs</Link>
+    </Compile>
+    <Compile Include="..\XamChat\Model\Message.cs">
+      <Link>Core\Message.cs</Link>
+    </Compile>
+    <Compile Include="..\XamChat\Model\User.cs">
+      <Link>Core\User.cs</Link>
+    </Compile>
+    <Compile Include="..\XamChat\Setting\FakeSetting.cs">
+      <Link>Core\FakeSetting.cs</Link>
+    </Compile>
+    <Compile Include="..\XamChat\Setting\ISetting.cs">
+      <Link>Core\ISetting.cs</Link>
+    </Compile>
+    <Compile Include="..\XamChat\ViewModel\BaseViewModel.cs">
+      <Link>Core\BaseViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\XamChat\ViewModel\ConversationViewModel.cs">
+      <Link>Core\ConversationViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\XamChat\ViewModel\FriendViewModel.cs">
+      <Link>Core\FriendViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\XamChat\ViewModel\LoginViewModel.cs">
+      <Link>Core\LoginViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\XamChat\ViewModel\RegisterViewModel.cs">
+      <Link>Core\RegisterViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\XamChat\Webservice\FakeService.cs">
+      <Link>Core\FakeService.cs</Link>
+    </Compile>
+    <Compile Include="..\XamChat\Webservice\IWebServices.cs">
+      <Link>Core\IWebServices.cs</Link>
+    </Compile>
+    <Compile Include="..\XamChat\Webservice\ParseServices.cs">
+      <Link>Core\ParseServices.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Assets\AboutAssets.txt" />
+    <None Include="Properties\AndroidManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Strings.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\Icon.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\Icon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Icon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Icon.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\Icon.png" />
+    <AndroidResource Include="Resources\layout\ConversationActivity.axml" />
+    <AndroidResource Include="Resources\Menu\Test.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\backicon.png" />
+    <AndroidResource Include="Resources\layout\MainActivity.axml" />
+    <AndroidResource Include="Resources\drawable-hdpi\CustomCursor.xml" />
+    <AndroidResource Include="Resources\Menu\menu_custom.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\back_icon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\customButton.axml" />
+    <AndroidResource Include="Resources\layout\FriendListActivity.xml" />
+    <AndroidResource Include="Resources\values\array.xml" />
+    <AndroidResource Include="Resources\values\colors.xml" />
+    <AndroidResource Include="Resources\values\dimens.xml" />
+    <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\shadow.xml" />
+    <AndroidResource Include="Resources\layout\MessageActivity.axml" />
+    <AndroidResource Include="Resources\layout\Menu.axml" />
+    <AndroidResource Include="Resources\Menu\MenuOption.axml" />
+    <AndroidResource Include="Resources\drawable-hdpi\add139.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\comments16.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\left207.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\group4.png" />
+    <AndroidResource Include="Resources\layout\ChatMessageItemLeft.axml" />
+    <AndroidResource Include="Resources\layout\ChatMessageItemRight.axml" />
+    <AndroidResource Include="Resources\layout\Baseitem.axml" />
+    <AndroidResource Include="Resources\layout\Login.axml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Core\" />
+    <Folder Include="Activity\" />
+    <Folder Include="Resources\Menu\" />
+    <Folder Include="Adapter\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SlidingMenuSharp\SlidingMenuSharp.csproj">
+      <Project>{555937D8-1533-4D19-A346-55C192C35A5D}</Project>
+      <Name>SlidingMenuSharp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="xamandroidsupportv4-18">
+      <Version>4.18.1</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="parse">
+      <Version>1.5.0</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+  </ItemGroup>
+</Project>
