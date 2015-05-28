@@ -156,6 +156,9 @@
     <Compile Include="Views\TheirMessageCell.designer.cs">
       <DependentUpon>TheirMessageCell.cs</DependentUpon>
     </Compile>
+    <Compile Include="..\XamChat\Webservice\ParseServices.cs">
+      <Link>Core\Model\ParseServices.cs</Link>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
   <ItemGroup />
